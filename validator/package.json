@@ -1,0 +1,38 @@
+{
+  "name": "agents-md-validator",
+  "version": "0.2.0",
+  "description": "Validates a store's agents.md against the agents.md v0.2 spec.",
+  "license": "MIT",
+  "homepage": "https://agents-md.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yarviai/agents-md.git",
+    "directory": "validator"
+  },
+  "bugs": "https://github.com/yarviai/agents-md/issues",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "bin": {
+    "agents-md-validator": "./src/cli.js"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "check:examples": "node src/cli.js check ../examples/olive-oil.md && node src/cli.js check ../examples/skincare.md && node src/cli.js check ../examples/apparel.md"
+  },
+  "dependencies": {
+    "yaml": "2.8.4"
+  }
+}
